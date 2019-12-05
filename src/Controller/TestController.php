@@ -33,7 +33,7 @@ class TestController extends AbstractController
     }
 
     /**
-     * @Route("/test/list", name="test_list")
+     * @Route("/test/list", name="list")
      */
     public function list(ProgrammingLanguageRepository $repository)
     {

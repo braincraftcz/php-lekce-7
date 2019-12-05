@@ -28,7 +28,7 @@ class HomeworkController extends AbstractController
     }
 
     /**
-     * @Route("/homework/list", name="list")
+     * @Route("/homework/list", name="homework_list")
      */
     public function list()
     {

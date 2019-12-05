@@ -1,4 +1,4 @@
-{% extends 'base-bootstrap.html.twig' %}
+{% extends 'base.html.twig' %}
 
 {% block title %}Hello HomeworkController!{% endblock %}
 
@@ -16,7 +16,7 @@
         <li><a href="{{ path('hello', {'name': 'Ludek'}) }}">hello</a></li>
         <li><a href="{{ path('homework') }}">homework</a></li>
         <li><a href="{{ path('remember') }}">remember</a></li>
-        <li><a href="{{ path('list') }}">list</a></li>
+        <li><a href="{{ path('homework_list') }}">list</a></li>
     </ul>
 </div>
 {% endblock %}
