@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Repository\ProgrammingLanguageRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -28,6 +29,16 @@ class TestController extends AbstractController
             'password' => 'velicesložitéheslo',
             'name' => 'Andrej Malý',
             'age' => 20,
+        ]);
+    }
+
+    /**
+     * @Route("/test/list", name="test_list")
+     */
+    public function list(ProgrammingLanguageRepository $repository)
+    {
+        return $this->render('test/list.html.twig', [
+            'languages' => $repository->findAll()
         ]);
     }
 
