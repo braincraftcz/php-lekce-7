@@ -1,0 +1,90 @@
+{% extends 'base-bootstrap.html.twig' %}
+
+{% block title %}Vzpomínka na vzpomínku na Pythagora{% endblock %}
+
+{% block body %}
+    <main role="main" class="container">
+        <div class="row">
+            <div class="col-6">
+                <h2>Obdelník</h2>
+                <table class="table">
+                    <tbody>
+                    <tr>
+                        <th>Délka strany A:</th>
+                        <td class="text-right">{{ obdelnik.a }}</td>
+                        <td>cm</td>
+                    </tr>
+                    <tr>
+                        <th>Délka strany B:</th>
+                        <td class="text-right">{{ obdelnik.b }}</td>
+                        <td>cm</td>
+                    </tr>
+                    <tr>
+                        <th>Obvod obdelníku:</th>
+                        <td class="text-right">{{ obdelnik.obvod }}<?=(2*($a+$b))?></td>
+                        <td>cm</td>
+                    </tr>
+                    <tr>
+                        <th>Obsah obdelníku:</th>
+                        <td class="text-right">{{ obdelnik.obsah }}<?=$obdelnikobsah?></td>
+                        <td>cm<sup>2</sup></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="col-6">
+                <h2>Rovnostranný trojúhelník</h2>
+                <table class="table">
+                    <tbody>
+                    <tr>
+                        <th>Délka strany:</th>
+                        <td class="text-right">{{ trojuhelnik.strana }}</td>
+                        <td>cm</td>
+                    </tr>
+                    <tr>
+                        <th>Úhel:</th>
+                        <td class="text-right">{{ trojuhelnik.uhel }}</td>
+                        <td>stupňů</td>
+                    </tr>
+                    <tr>
+                        <th>Obvod trojúhelníku:</th>
+                        <td class="text-right">{{ trojuhelnik.obvod }}</td>
+                        <td>cm</td>
+                    </tr>
+                    <tr>
+                        <th>Výška trojuhelníku:</th>
+                        <td class="text-right">{{ trojuhelnik.vyska }}</td>
+                        <td>cm<sup>2</sup></td>
+                    </tr>
+                    <tr>
+                        <th>Obsah trojuhelníku:</th>
+                        <td class="text-right">{{ trojuhelnik.obsah }}</td>
+                        <td>cm<sup>2</sup></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-4">
+                <h2>Vzpomínka na pythagora</h2>
+                <p>
+                    Pythagoras ze Samu byl legendární řecký filosof, matematik, astronom i kněz.
+                    Většina lidí jej zná z hodin matematiky a jeho slavné Pythagorovy věty "c<sup>2</sup> = a<sup>2</sup> + b<sup>2</sup>", která se však týká pouze pravoúhlých trojúhelníků.
+                    <strong>Spojovat ho s výše uvedenými výpočty je tedy přinejmenším zavádějící.</strong>
+                </p>
+            </div>
+
+            <div class="col-8"><img class="img-fluid" src="https://greece.greekreporter.com/files/Pythagoras.jpg"></div>
+        </div>
+
+    </main><!-- /.container -->
+
+    <footer class="fixed-bottom py-3 bg-light">
+        <div class="container-fluid">
+            &copy; Braincraft fandí starověkým matematikům
+        </div>
+    </footer>
+{% endblock %}
