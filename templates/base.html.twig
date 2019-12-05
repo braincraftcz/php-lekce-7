@@ -8,10 +8,47 @@
     <body>
 
         <p align="center">
-            <a href="{{ path('test') }}">index</a>
-            <a href="{{ path('detail') }}">detail</a>
-            <a href="{{ path('hello', {'name': 'Master'}) }}">master</a>
-            <a href="{{ path('hello', {'name': 'Slave'}) }}">slave</a>
+            {% if app.request.get('_route') == 'test' %}
+                test
+            {% else %}
+                <a href="{{ path('test') }}">test</a>
+            {% endif %}
+
+            {% if app.request.get('_route') == 'detail' %}
+                detail
+            {% else %}
+                <a href="{{ path('detail') }}">detail</a>
+            {% endif %}
+
+            {% if app.request.get('_route') == 'hello' and controller_name == 'Master' %}
+                master
+            {% else %}
+                <a href="{{ path('hello', {'name': 'Master'}) }}">master</a>
+            {% endif %}
+
+            {% if app.request.get('_route') == 'hello' and controller_name == 'Slave' %}
+                slave
+            {% else %}
+                <a href="{{ path('hello', {'name': 'Slave'}) }}">slave</a>
+            {% endif %}
+
+            {% if app.request.get('_route') == 'homework' %}
+                homework
+            {% else %}
+                <a href="{{ path('homework') }}">homework</a>
+            {% endif %}
+
+            {% if app.request.get('_route') == 'remember' %}
+                remember
+            {% else %}
+                <a href="{{ path('remember') }}">remember</a>
+            {% endif %}
+
+            {% if app.request.get('_route') == 'list' %}
+                list
+            {% else %}
+                <a href="{{ path('list') }}">list</a>
+            {% endif %}
         </p>
 
         {% block body %}{% endblock %}
