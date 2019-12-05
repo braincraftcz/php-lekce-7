@@ -6,6 +6,14 @@
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
+
+        <p align="center">
+            <a href="{{ path('test') }}">index</a>
+            <a href="{{ path('detail') }}">detail</a>
+            <a href="{{ path('hello', {'name': 'Master'}) }}">master</a>
+            <a href="{{ path('hello', {'name': 'Slave'}) }}">slave</a>
+        </p>
+
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
     </body>
