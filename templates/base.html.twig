@@ -49,6 +49,36 @@
             {% else %}
                 <a href="{{ path('list') }}">list</a>
             {% endif %}
+
+            {% if app.request.get('_route') == 'book_index' %}
+                book_index
+            {% else %}
+                <a href="{{ path('book_index') }}">book_index</a>
+            {% endif %}
+
+            {% if app.request.get('_route') == 'century' %}
+                books
+            {% else %}
+                <a href="{{ path('century') }}">century</a>
+            {% endif %}
+
+            {% if app.request.get('_route') == 'author' %}
+                books
+            {% else %}
+                <a href="{{ path('author') }}">author</a>
+            {% endif %}
+
+            {% if app.request.get('_route') == 'price' %}
+                books
+            {% else %}
+                <a href="{{ path('price') }}">price</a>
+            {% endif %}
+
+            {% if app.request.get('_route') == 'years' %}
+                books
+            {% else %}
+                <a href="{{ path('years') }}">years</a>
+            {% endif %}
         </p>
 
         {% block body %}{% endblock %}

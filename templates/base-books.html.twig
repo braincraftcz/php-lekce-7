@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+    </head>
+    <body>
+
+        <p align="center">
+            {% if app.request.get('_route') == 'book_index' %}
+                index
+            {% else %}
+                <a href="{{ path('book_index') }}">index</a>
+            {% endif %}
+
+            {% if app.request.get('_route') == 'century' %}
+                century
+            {% else %}
+                <a href="{{ path('century') }}">century</a>
+            {% endif %}
+
+            {% if app.request.get('_route') == 'author' %}
+                author
+            {% else %}
+                <a href="{{ path('author') }}">author</a>
+            {% endif %}
+
+            {% if app.request.get('_route') == 'price' %}
+                price
+            {% else %}
+                <a href="{{ path('price') }}">price</a>
+            {% endif %}
+
+            {% if app.request.get('_route') == 'years' %}
+                years
+            {% else %}
+                <a href="{{ path('years') }}">years</a>
+            {% endif %}
+        </p>
+
+        {% block body %}{% endblock %}
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>

@@ -1,0 +1,41 @@
+{% extends 'base-books.html.twig' %}
+
+{% block title %}Books{% endblock %}
+
+{% block body %}
+    <h1>Books: {{ app.request.get('_route') }}</h1>
+
+    {% for table in tables %}
+        <h2>{{ table.title }}</h2>
+        <table >
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Pages</th>
+                <th>Author</th>
+                <th>Year</th>
+                <th>Price</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for book in table.books %}
+                <tr>
+                    <td>{{ book.id }}</td>
+                    <td>{{ book.name }}</td>
+                    <td>{{ book.pages }}</td>
+                    <td>{{ book.author }}</td>
+                    <td>{{ book.year }}</td>
+                    <td>{{ book.price }}</td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="7">No records found.</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        No data tables found.
+    {% endfor %}
+{% endblock %}

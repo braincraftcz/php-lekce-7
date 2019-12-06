@@ -54,6 +54,10 @@
                         <a class="nav-link" href="{{ path('list') }}">list</a>
                     </li>
 
+                    <li class="nav-item {% if app.request.get('_route') == 'book_index' %}active{% endif %}">
+                        <a class="nav-link" href="{{ path('book_index') }}">book_index</a>
+                    </li>
+
                 </ul>
                 <form class="form-inline my-2 my-lg-0">
                     <input class="form-control mr-sm-2" type="text" placeholder="Zde napiš, co hledáš" aria-label="Search">
