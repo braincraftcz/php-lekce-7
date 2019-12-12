@@ -58,6 +58,10 @@
                 <a class="nav-link" href="{{ path('known') }}">known</a>
             </li>
 
+            <li class="nav-item {% if app.request.get('_route') == 'homepage' %}active{% endif %}">
+                <a class="nav-link" href="{{ path('homepage') }}">Lekce 11</a>
+            </li>
+
         </ul>
     </div>
 </nav>
